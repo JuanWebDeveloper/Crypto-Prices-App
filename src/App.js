@@ -4,6 +4,7 @@ import { TableCrypto } from './components/TableCrypto';
 import { getData } from './helper/getData';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles.css';
 
 const App = () => {
 	const [crypto, setCrypto] = useState([]);
