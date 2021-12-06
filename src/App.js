@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
+import { SearchCrypto } from './components/SearchCrypto';
 import { TableCrypto } from './components/TableCrypto';
 import { getData } from './helper/getData';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { SearchCrypto } from './components/SearchCrypto';
 
 const App = () => {
 	const [crypto, setCrypto] = useState([]);
+	const [search, setSearch] = useState('');
 
 	useEffect(() => {
 		const response = getData();
@@ -17,8 +18,8 @@ const App = () => {
 	return (
 		<div className='container'>
 			<div className='row'>
-				<SearchCrypto />
-				<TableCrypto crypto={crypto} />
+				<SearchCrypto setSearch={setSearch} />
+				<TableCrypto crypto={crypto} search={search} />
 			</div>
 		</div>
 	);
