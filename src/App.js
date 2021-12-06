@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { TableCrypto } from './components/TableCrypto';
 import { getData } from './helper/getData';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const App = () => {
 	const [crypto, setCrypto] = useState([]);
 
@@ -12,9 +14,10 @@ const App = () => {
 	}, []);
 
 	return (
-		<div>
-			<h1>Cripto Prices</h1>
-			<TableCrypto crypto={crypto} />
+		<div className='container'>
+			<div className='row'>
+				<TableCrypto crypto={crypto} />
+			</div>
 		</div>
 	);
 };
